@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 wif = "5JhhMGNPsuU42XXjZ57FcDKvbb7KLrehN65tdTQFrH51uruZLHi";
 pubkey = "EOS7ckzf4BMgxjgNSYV22rtTXga8R9Z4XWVhYp8TBgnBi2cErJ2hn";
 
-eos = Eos({ keyProvider: wif, chainId:"038f4b0fc8ff18a4f0842a8f0564611f6e96e8535901dd45e43ac8691a1c4dca", httpEndpoint: "http://dev.cryptolions.io:38888" });
+eos = Eos({ keyProvider: wif, chainId:"038f4b0fc8ff18a4f0842a8f0564611f6e96e8535901dd45e43ac8691a1c4dca", httpEndpoint: "http://dev.cryptolions.io:18888" });
 
 
 app.use(function(req, res, next) {
@@ -97,7 +97,7 @@ async function i(){
 
 app.get('/api/products', function(req, res) {
     var fin_result = [];
-    eos.getTableRows('true','gh4','gh4','scans')
+    eos.getTableRows('true','gh4','gh4','scans',0,0,1000,1000)
     .then((result1)=> {i().then((result2)=>{ 
         var scandata = result1['rows'];
         var itemdata = result2['rows'];
@@ -128,7 +128,7 @@ app.get('/api/products', function(req, res) {
 
 app.get('/api/products/:productid', function(req, res) {
     var fin_result = [];
-    eos.getTableRows('true','gh4','gh4','scans')
+    eos.getTableRows('true','gh4','gh4','scans',0,0,1000,1000)
     .then((result1)=> {i().then((result2)=>{ 
         var scandata = result1['rows'];
         var itemdata = result2['rows'];

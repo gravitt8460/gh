@@ -9,6 +9,7 @@ def convert(val,direction):
 	if(direction == "S" or direction == "W"):
 		final = -1 * final
 		return final
+	return final
 		
 
 while True:
@@ -17,10 +18,8 @@ while True:
 	if data[0]=="$GPRMC":
 		if data[2]=="A":
 			print("Latitude:" + str(convert(data[3],data[4])))
-			print(data[3])
-			print(data[4])
 			print("Longiitude:" + str(convert(data[5],data[6])))
-			
+			break
 			
 			
 

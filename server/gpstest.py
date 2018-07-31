@@ -7,5 +7,18 @@ while True:
 	data = line.split(",")
 	if data[0]=="$GPRMC":
 		if data[2]=="A":
-			print("Latitude:" + data[3])
-			print("Longiitude:" + data[5])
+			print("Latitude:" + convert(data[3],data[4]))
+			print("Longiitude:" + convert(data[5],data[6]))
+			
+			
+			
+
+def convert(val,direction):
+	dd = int(float(val)/100)
+	ss = float(val) - (dd * 100)
+	final = dd + ss/60
+	if(direction == "S" or direction == "W"):
+		final = -1 * final
+		return final
+		
+	

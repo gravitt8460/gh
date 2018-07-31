@@ -7,7 +7,7 @@ print file_name
 path = "/home/pi/to_transmit/" + file_name + ".jpg/"
 print path
 os.system('fswebcam -r 320x240 -S 3 --jpeg 50 --save' +  file_name)
-api = ipfsapi.connect('34.193.139.251',8989)
+api = ipfsapi.connect('54.197.112.106',5001)
 print api.id()
 result = api.add('test.txt')
 filehash = result["Hash"]

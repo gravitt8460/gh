@@ -16,8 +16,8 @@ while True:
 	data = line.split(",")
 	if data[0]=="$GPRMC":
 		if data[2]=="A":
-			print("Latitude:" + convert(data[3],data[4]))
-			print("Longiitude:" + convert(data[5],data[6]))
+			print("Latitude:" + str(convert(data[3],data[4])))
+			print("Longiitude:" + str(convert(data[5],data[6])))
 			
 			
 			

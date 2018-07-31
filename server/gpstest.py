@@ -7,5 +7,5 @@ while True:
 	data = line.split(",")
 	if data[0]=="$GPMRC":
 		if data[2]=="A":
-			print "Latitude: %s" %> (data[3])
-			print "Longiitude: %s" %> (data[5])
+			print("Latitude:" + data[3])
+			print("Longiitude:" + data[5])

@@ -25,7 +25,8 @@ while True:
 			longitude = str(convert(data[5],data[6]))
 			print("Latitude:" + latitude)
 			print("Longiitude:" + longitude)
-			location = geolocator.reverse(latitude, longitude)
+			string = '"'+latitude+','+longitude+'"'
+			location = geolocator.reverse(string)
 			print(location.address)
 			print((location.latitude, location.longitude))
 			print(location.raw)

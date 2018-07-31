@@ -3,7 +3,7 @@ import serial
 gps = serial.Serial("/dev/ttyACM0", baudrate=9600)
 
 while True:
-	line = gps.readLine()
+	line = gps.readline()
 	data = line.split(",")
 	if data[0]=="$GPMRC":
 		if data[2]=="A":

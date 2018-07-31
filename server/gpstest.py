@@ -28,8 +28,6 @@ while True:
 			string = latitude+','+longitude
 			location = geolocator.reverse(string)
 			print(location.address)
-			print((location.latitude, location.longitude))
-			print(location.raw)
 			break
 			
 			

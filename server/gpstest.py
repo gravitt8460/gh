@@ -1,5 +1,9 @@
 import serial 
 
+geolocator = Nominatim(user_agent="EOS")
+from geopy.geocoders import Nominatim
+
+
 gps = serial.Serial("/dev/ttyACM0", baudrate=9600)
 
 def convert(val,direction):
@@ -17,8 +21,14 @@ while True:
 	data = line.split(",")
 	if data[0]=="$GPRMC":
 		if data[2]=="A":
-			print("Latitude:" + str(convert(data[3],data[4])))
-			print("Longiitude:" + str(convert(data[5],data[6])))
+			latitude = str(convert(data[3],data[4]))
+			longitude = str(convert(data[5],data[6]))
+			print("Latitude:" + latitude)
+			print("Longiitude:" + longitude)
+			location = geolocator.reverse(latitude, longitude)
+			print(location.address)
+			print((location.latitude, location.longitude))
+			print(location.raw)
 			break
 			
 			

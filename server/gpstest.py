@@ -1,9 +1,9 @@
 import serial 
 
-geolocator = Nominatim(user_agent="EOS")
+
 from geopy.geocoders import Nominatim
 
-
+geolocator = Nominatim(user_agent="EOS")
 gps = serial.Serial("/dev/ttyACM0", baudrate=9600)
 
 def convert(val,direction):
